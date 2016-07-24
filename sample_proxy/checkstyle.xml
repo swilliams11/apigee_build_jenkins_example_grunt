@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<checkstyle>
+
+<file name="target/apiproxy/resources/node/app.js">
+  
+</file>
+
+
+
+<file name="target/apiproxy/resources/jsc/search-and-replace-example.js">
+  
+</file>
+
+
+
+<file name="target/apiproxy/resources/jsc/search-and-replace-example2.js">
+  
+</file>
+
+
+
+<file name="target/apiproxy/resources/jsc/js_external_vars.js">
+  
+</file>
+
+
+
+</checkstyle>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules>
+        <FaultRule name="rules">
+<Step>
+	<Name>CORS</Name>
+</Step>
+<Step>
+	<Name>Fault-Common-Error-Handler-JSON</Name>
+</Step>
+
+        </FaultRule>
+    </FaultRules>
+    <Flows>
+        <Flow name="all">
+            <Description/>
+            <Request/>
+            <Response>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/apigee/**") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="forecastweather_node">
+            <Description/>
+            <Request/>
+            <Response>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/forecastweather_node/**") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="node">
+            <Description/>
+            <Request/>
+            <Response>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/images/**") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="SimpleJavaCallout">
+            <Description/>
+            <Request/>
+            <Response>
+        <!-- Disabled by default - JavaCallout -->
+        <!--    <Step>
+                    <FaultRules/>
+                    <Name>SimpleJavaCallout</Name>
+                </Step> -->
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/javacallout") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <HTTPProxyConnection>
+        <BasePath>/basepath</BasePath>
+        <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <Condition>(proxy.pathsuffix MatchesPath "/apigee/**") and (request.verb = "GET")</Condition>
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+    <!-- <RouteRule name="NoRoute"></RouteRule> -->
+    <RouteRule name="node">
+        <TargetEndpoint>node</TargetEndpoint>
+    </RouteRule>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+</ProxyEndpoint>

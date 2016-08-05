@@ -1,6 +1,10 @@
 sample-api
 =========
-Add description here. @TODO
+This is a sample API that has two target endpoints:  1) default and 2) a nodejs.
+It demonstrates the use of common policies and common flows and it 
+also includes Apickli test cases included. 
+
+
 
 ### Overview
 Add overview here. @TODO

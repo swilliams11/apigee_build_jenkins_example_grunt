@@ -6,7 +6,7 @@ var apickli = require('apickli');
 module.exports = function() {
 	// cleanup before every scenario
 	this.Before(function(scenario, callback) {
-		this.apickli = new apickli.Apickli('https', 'https://seanwilliams-test.apigee.net/basepath');
+		this.apickli = new apickli.Apickli('http', 'seanwilliams-test.apigee.net/basepath');
 		callback();
 	});
 

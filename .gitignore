@@ -1,2 +1,4 @@
 sample_proxy/node_modules
 **/.DS_Store
+sample_proxy/target/**
+sample_proxy/target

@@ -111,10 +111,10 @@ module.exports = function(grunt) {
 	    },*/
 	    //apickli tests
 	    cucumberjs: {
-			src: 'test/features',
+			src: "tests/" + grunt.option('env') + "/features",
 			options: {
 				format: 'pretty',
-				steps: 'test/features/step_definitions'
+				steps: "tests/" + grunt.option('env') + "/features/step_definitions"
 			}
 		},
 	    jshint: {
